@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_post_post,access.post.post,model_post_post,base.group_user,1,1,1,1
+access_post_comment,access.post.comment,model_post_comment,base.group_user,1,1,1,1
+access_post_media,access.post.media,model_post_media,base.group_user,1,1,1,1

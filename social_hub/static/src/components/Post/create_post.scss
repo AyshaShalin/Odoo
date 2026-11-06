@@ -1,0 +1,370 @@
+.sh-page {
+    min-height: 100vh;
+    background: #f8f9fa;
+    color: #262626;
+}
+
+/* Top Navigation */
+
+.sh-navbar {
+    height: 64px;
+    background: #fff;
+    border-bottom: 1px solid #e9e9e9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+}
+
+.sh-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 21px;
+    font-weight: 700;
+
+    i {
+        color: #7655d8;
+        font-size: 23px;
+    }
+}
+
+.sh-nav-links {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    a {
+        color: #777;
+        text-decoration: none;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .sh-nav-active {
+        color: #7655d8;
+        font-weight: 600;
+    }
+}
+
+.sh-profile {
+    font-size: 27px;
+    color: #777;
+}
+
+/* Main Feed */
+
+.sh-main {
+    width: 100%;
+    max-width: 680px;
+    margin: 35px auto;
+    padding: 0 16px;
+}
+
+.sh-feed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+
+    h2 {
+        font-size: 25px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    p {
+        color: #888;
+        font-size: 13px;
+        margin: 0;
+    }
+}
+
+.sh-create-btn {
+    background: #7655d8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 600;
+
+    &:hover {
+        background: #6341c3;
+        color: white;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+    }
+}
+
+/* Feed */
+
+.sh-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.sh-post-card {
+    background: white;
+    border: 1px solid #e9e9e9;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Post Header */
+
+.sh-post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 17px;
+}
+
+.sh-user-info {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.sh-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sh-user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    strong {
+        font-size: 13px;
+    }
+
+    small {
+        color: #999;
+        font-size: 11px;
+    }
+}
+
+.sh-more-btn {
+    border: none;
+    background: transparent;
+    color: #777;
+    font-size: 18px;
+}
+
+/* Caption */
+
+.sh-post-caption {
+    padding: 0 17px 14px;
+
+    p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.6;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Post Images */
+
+.sh-post-media {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3px;
+    background: #f1f1f1;
+
+    img {
+        width: 100%;
+        max-height: 420px;
+        object-fit: cover;
+        display: block;
+    }
+
+    img:only-child {
+        grid-column: 1 / -1;
+        max-height: 500px;
+        object-fit: contain;
+        background: #fafafa;
+    }
+}
+
+/* Post Actions */
+
+.sh-post-actions {
+    display: flex;
+    gap: 22px;
+    padding: 13px 17px;
+
+    button {
+        border: none;
+        background: transparent;
+        color: #555;
+        font-size: 13px;
+        padding: 0;
+
+        i {
+            margin-right: 5px;
+            font-size: 16px;
+        }
+
+        &:hover {
+            color: #7655d8;
+        }
+    }
+}
+
+/* Empty State */
+
+.sh-empty-state {
+    background: white;
+    border: 1px solid #e9e9e9;
+    border-radius: 12px;
+    padding: 55px 20px;
+    text-align: center;
+
+    h4 {
+        margin: 15px 0 7px;
+        font-size: 17px;
+    }
+
+    p {
+        color: #999;
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+}
+
+.sh-empty-icon {
+    font-size: 35px;
+    color: #7655d8;
+}
+
+.sh-loading {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+}
+
+/* Create Post Dialog */
+
+.sh-create-dialog {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.sh-caption-input {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    resize: vertical;
+    padding: 12px;
+    font-size: 14px;
+    box-shadow: none !important;
+
+    &:focus {
+        border-color: #7655d8;
+    }
+}
+
+.sh-upload-area {
+    min-height: 120px;
+    border: 1px dashed #c9c1e8;
+    border-radius: 9px;
+    background: #faf9ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    color: #7655d8;
+
+    i {
+        font-size: 25px;
+    }
+
+    span {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    small {
+        color: #999;
+        font-size: 11px;
+    }
+
+    input {
+        display: none;
+    }
+
+    &:hover {
+        background: #f4f1ff;
+    }
+}
+
+/* Image Preview */
+
+.sh-image-preview {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.sh-preview-item {
+    position: relative;
+    aspect-ratio: 1;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+}
+
+.sh-remove-image {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 23px;
+    height: 23px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    font-size: 11px;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    .sh-navbar {
+        padding: 0 16px;
+    }
+
+    .sh-main {
+        margin-top: 22px;
+    }
+
+    .sh-feed-header {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .sh-feed-header h2 {
+        font-size: 21px;
+    }
+
+    .sh-create-btn {
+        padding: 9px 11px;
+        white-space: nowrap;
+    }
+}

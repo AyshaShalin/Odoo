@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="social_hub.PostCard">
+        <article class="sh-post-card">
+            <!-- Post Header -->
+            <div class="sh-post-header">
+                <div class="sh-user-info">
+                    <img
+                        t-if="avatarUrl"
+                        t-att-src="avatarUrl"
+                        class="sh-avatar"
+                        alt="User"
+                    />
+                    <div class="sh-user-details">
+                        <strong t-esc="username"/>
+                        <small t-esc="formattedDate"/>
+                    </div>
+                </div>
+
+                <button class="sh-more-btn" title="More options">
+                    <i class="fa fa-ellipsis-h"/>
+                </button>
+            </div>
+
+            <!-- Caption -->
+            <div t-if="props.post.caption"
+                class="sh-post-caption">
+                <p t-esc="props.post.caption"/>
+            </div>
+
+            <!-- Post Images -->
+            <div t-if="mediaIds.length"
+                class="sh-post-media">
+                <img
+                    t-foreach="mediaIds"
+                    t-as="mediaId"
+                    t-key="mediaId"
+                    t-att-src="getImageUrl(mediaId)"
+                    alt="Post image"
+                />
+            </div>
+
+            <!-- Post Actions -->
+            <div class="sh-post-actions">
+                <button type="button">
+                    <i class="fa fa-heart-o"/>
+                    Like
+                </button>
+
+                <button type="button">
+                    <i class="fa fa-comment-o"/>
+                    Comment
+                </button>
+            </div>
+        </article>
+    </t>
+</templates>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Home page action -->
+    <record id="socialhub_dashboard_action" model="ir.actions.client">
+        <field name="name">Social Hub</field>
+        <field name="tag">social_hub_tag</field>
+    </record>
+
+    <menuitem name="Social Hub" id="social_hub_menu" sequence="0"
+              action="socialhub_dashboard_action" parent="social_hub_menu_root"/>
+
+    <menuitem name="Social Hub" id="social_hub_menu_root"/>
+
+    <menuitem name="Posts"
+              id="social_hub_post_menu"
+              action="social_post_action"
+              parent="social_hub_menu_root"
+    />
+</odoo>

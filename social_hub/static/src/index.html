@@ -1,0 +1,372 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialHub - Post</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+            color: #262626;
+            padding: 40px 20px;
+        }
+
+        .post-container {
+            max-width: 650px;
+            margin: auto;
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        /* Post Header */
+        .post-header {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            gap: 12px;
+        }
+
+        .avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .user-info {
+            flex: 1;
+        }
+
+        .username {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .location {
+            font-size: 12px;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        .more {
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* Post Image */
+        .post-image {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Post Actions */
+        .post-actions {
+            display: flex;
+            align-items: center;
+            padding: 14px 16px 8px;
+            gap: 18px;
+        }
+
+        .action {
+            font-size: 23px;
+            cursor: pointer;
+        }
+
+        .bookmark {
+            margin-left: auto;
+        }
+
+        /* Post Details */
+        .post-details {
+            padding: 0 16px 14px;
+        }
+
+        .likes {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 9px;
+        }
+
+        .caption {
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .caption strong {
+            margin-right: 5px;
+        }
+
+        .time {
+            font-size: 11px;
+            color: #999;
+            margin-top: 8px;
+        }
+
+        /* Comments */
+        .comments-section {
+            border-top: 1px solid #eee;
+            padding: 16px;
+        }
+
+        .comments-heading {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .comment {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .comment .avatar {
+            width: 32px;
+            height: 32px;
+        }
+
+        .comment-content {
+            flex: 1;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .comment-content strong {
+            margin-right: 5px;
+        }
+
+        .comment-meta {
+            display: flex;
+            gap: 14px;
+            margin-top: 5px;
+            font-size: 11px;
+            color: #999;
+        }
+
+        .reply-btn {
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .replies {
+            margin: 12px 0 0 42px;
+        }
+
+        /* Comment Input */
+        .comment-input-section {
+            border-top: 1px solid #eee;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .comment-input-section input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 13px;
+            padding: 10px 0;
+        }
+
+        .comment-input-section button {
+            border: none;
+            background: none;
+            color: #3897f0;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .comment-input-section button:hover {
+            color: #1877d2;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .post-image {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="post-container">
+
+    <!-- Post Header -->
+    <div class="post-header">
+        <img class="avatar"
+             src="https://i.pravatar.cc/100?img=12">
+
+        <div class="user-info">
+            <div class="username">john_doe</div>
+            <div class="location">Kozhikode, India</div>
+        </div>
+
+        <div class="more">⋯</div>
+    </div>
+
+    <!-- Post Image -->
+    <img class="post-image"
+         src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1000"
+         alt="Post image">
+
+    <!-- Post Actions -->
+    <div class="post-actions">
+        <span class="action">♡</span>
+        <span class="action">♧</span>
+        <span class="action">↗</span>
+        <span class="action bookmark">♧</span>
+    </div>
+
+    <!-- Post Details -->
+    <div class="post-details">
+
+        <div class="likes">245 likes</div>
+
+        <div class="caption">
+            <strong>john_doe</strong>
+            Exploring beautiful places and collecting memories.
+            Life is better when you travel! 🌿
+        </div>
+
+        <div class="time">2 HOURS AGO</div>
+
+    </div>
+
+    <!-- Comments Section -->
+    <div class="comments-section">
+
+        <div class="comments-heading">
+            Comments (3)
+        </div>
+
+        <!-- Comment 1 -->
+        <div class="comment">
+
+            <img class="avatar"
+                 src="https://i.pravatar.cc/100?img=5">
+
+            <div class="comment-content">
+
+                <div>
+                    <strong>alex_m</strong>
+                    Beautiful view! 😍
+                </div>
+
+                <div class="comment-meta">
+                    <span>1h</span>
+                    <span>12 likes</span>
+                    <span class="reply-btn">Reply</span>
+                </div>
+
+                <!-- Nested Reply -->
+                <div class="replies">
+
+                    <div class="comment">
+
+                        <img class="avatar"
+                             src="https://i.pravatar.cc/100?img=12">
+
+                        <div class="comment-content">
+                            <div>
+                                <strong>john_doe</strong>
+                                Thank you! ❤️
+                            </div>
+
+                            <div class="comment-meta">
+                                <span>45m</span>
+                                <span class="reply-btn">Reply</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Comment 2 -->
+        <div class="comment">
+
+            <img class="avatar"
+                 src="https://i.pravatar.cc/100?img=8">
+
+            <div class="comment-content">
+
+                <div>
+                    <strong>sarah</strong>
+                    Adding this place to my bucket list!
+                </div>
+
+                <div class="comment-meta">
+                    <span>30m</span>
+                    <span>5 likes</span>
+                    <span class="reply-btn">Reply</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Comment 3 -->
+        <div class="comment">
+
+            <img class="avatar"
+                 src="https://i.pravatar.cc/100?img=9">
+
+            <div class="comment-content">
+
+                <div>
+                    <strong>mike</strong>
+                    Where is this place?
+                </div>
+
+                <div class="comment-meta">
+                    <span>10m</span>
+                    <span class="reply-btn">Reply</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Add Comment -->
+    <div class="comment-input-section">
+
+        <img class="avatar"
+             src="https://i.pravatar.cc/100?img=12">
+
+        <input type="text"
+               placeholder="Add a comment...">
+
+        <button>Post</button>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+```

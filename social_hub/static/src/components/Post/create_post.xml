@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="social_hub.CreatePost">
+        <Dialog title="'Create Post'" size="'md'">
+
+            <div class="sh-create-dialog">
+
+                <textarea
+                    class="form-control sh-caption-input"
+                    placeholder="What's on your mind?"
+                    t-att-value="state.caption"
+                    t-on-input="onCaptionChange"
+                    rows="4"
+                />
+
+                <!-- Image Upload -->
+                <label class="sh-upload-area">
+                    <i class="fa fa-image"/>
+                    <span>Add Photos</span>
+                    <small>You can select multiple images</small>
+
+                    <input
+                        type="file"
+                        accept="image/*"
+                        multiple="multiple"
+                        t-on-change="onImagesSelected"
+                    />
+                </label>
+
+                <!-- Image Previews -->
+                <div
+                    t-if="state.images.length"
+                    class="sh-image-preview"
+                >
+                    <div
+                        t-foreach="state.images"
+                        t-as="image"
+                        t-key="image_index"
+                        class="sh-preview-item"
+                    >
+                        <img t-att-src="image.url" alt="Preview"/>
+
+                        <button
+                            type="button"
+                            class="sh-remove-image"
+                            t-on-click="() => this.removeImage(image_index)"
+                        >
+                            <i class="fa fa-times"/>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <t t-set-slot="footer">
+                <button
+                    class="btn btn-light"
+                    t-on-click="cancel"
+                    t-att-disabled="state.isPublishing"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="btn sh-create-btn"
+                    t-on-click="publishPost"
+                    t-att-disabled="state.isPublishing"
+                >
+                    <i
+                        t-if="state.isPublishing"
+                        class="fa fa-spinner fa-spin me-1"
+                    />
+                    <t t-esc="state.isPublishing ? 'Publishing...' : 'Publish'"/>
+                </button>
+            </t>
+
+        </Dialog>
+    </t>
+</templates>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="social_hub.socialhub_dashboard_action">
+        <div class="sh-page">
+            <!-- Top Navigation -->
+            <nav class="sh-navbar">
+                <div class="sh-brand">
+                    <i class="fa fa-camera-retro"/>
+                    <span>SocialHub</span>
+                </div>
+
+                <div class="sh-nav-links">
+                    <a class="sh-nav-active">
+                        <i class="fa fa-home"/>
+                        Home
+                    </a>
+                </div>
+
+                <div class="sh-profile">
+                    <img t-att-src="'/web/image/res.users/' + env.services.user?.userId + '/avatar_128'"
+                        alt="Profile"
+                    />
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="sh-main">
+
+                <div class="sh-feed-header">
+                    <div>
+                        <h2>Home</h2>
+                        <p>Share your moments with the community.</p>
+                    </div>
+
+                    <button
+                        class="btn sh-create-btn"
+                        t-on-click="openCreatePost"
+                    >
+                        <i class="fa fa-plus me-2"/>
+                        Create Post
+                    </button>
+                </div>
+
+                <!-- Loading -->
+                <div t-if="state.loading" class="sh-loading">
+                    <i class="fa fa-spinner fa-spin"/>
+                    Loading posts...
+                </div>
+
+                <!-- Posts -->
+                <div t-elif="state.posts.length" class="sh-feed">
+                    <PostCard
+                        t-foreach="state.posts"
+                        t-as="post"
+                        t-key="post.id"
+                        post="post"
+                    />
+                </div>
+
+                <!-- Empty State -->
+                <div t-else="" class="sh-empty-state">
+                    <div class="sh-empty-icon">
+                        <i class="fa fa-camera"/>
+                    </div>
+
+                    <h4>No posts yet</h4>
+                    <p>Be the first to share something with the community.</p>
+
+                    <button class="btn sh-create-btn"
+                        t-on-click="openCreatePost">
+                        Create your first post
+                    </button>
+                </div>
+            </main>
+       </div>
+   </t>
+</templates>
